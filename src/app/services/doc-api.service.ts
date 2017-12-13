@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import { environment } from '../../environments/environment';
 
 export class Doc {
+  title: string;
   text: string;
   _id: string;
   createdAd: string;
@@ -32,12 +33,24 @@ export class DocApiService {
     ).toPromise();
   }
 
+  // PATCH /api/doc/:id
+  editOneDoc(oneId: string, docInfo: Doc) {
+    return this.httpThing.patch(
+      `${environment.backendURL}/api/doc/${oneId}`,
+      docInfo,
+    {withCredentials: true}
+  ).toPromise();
+  }
+
   // DELETE /api/doc/:id
   deleteOneDoc(oneId: string) {
     return this.httpThing.delete(
-      `${environment.backendURL}/api/phones/${oneId}`,
+      `${environment.backendURL}/api/doc/${oneId}`,
       {withCredentials: true}
     ).toPromise();
   }
+
+
+
 
 }

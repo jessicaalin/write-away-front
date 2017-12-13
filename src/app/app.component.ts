@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.userThing.getCheckLogin()
       .catch((err) => {
-        alert("Sorry! Something went wrong.");
         console.log("Check Login Error");
         console.log(err);
       });
@@ -31,7 +30,6 @@ export class AppComponent implements OnInit {
       this.routerThing.navigate(['/']);
     })
     .catch((err) => {
-      alert("Sorry! Something went wrong.");
       console.log("Log Out Error");
       console.log(err);
     });

@@ -1,8 +1,9 @@
 
 <ul>
   <li *ngFor="let oneDoc of docs">
-    <!-- <h3>{{oneDoc.name}}</h3> -->
-    <p>{{oneDoc.text}}</p>
-    <!-- <a [routerLink] = "['/phones', oneDoc._id]">See Details</a> -->
+    <h3>{{oneDoc.title}}</h3>
+    <a [routerLink] = "['/doc', oneDoc._id]">See Details</a>
+    <button (click)="startDeleteAjax(oneDoc._id)">Delete</button>
   </li>
 </ul>
+<!-- <a [routerLink] = "[/doc/new]">Add</a> -->

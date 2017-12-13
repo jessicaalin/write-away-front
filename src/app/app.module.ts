@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddDocumentComponent } from './add-document/add-document.component';
 import { DocComponent } from './doc/doc.component';
+import { DocEditComponent } from './doc-edit/doc-edit.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DocComponent } from './doc/doc.component';
     DashboardComponent,
     NotFoundComponent,
     AddDocumentComponent,
-    DocComponent
+    DocComponent,
+    DocEditComponent
   ],
   imports: [
     BrowserModule,
