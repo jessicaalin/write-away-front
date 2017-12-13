@@ -10,10 +10,10 @@ import { AddDocumentComponent } from './add-document/add-document.component';
 
 const routes: Routes = [
   { path: '',           component: HomePageComponent },
-  { path: 'signup',     component: SignupComponent },
+  // { path: 'signup',     component: SignupComponent },
   { path: 'login',      component: LoginComponent },
   { path: 'dashboard',  component: DashboardComponent },
-  { path: 'new',        component: AddDocumentComponent },
+  // { path: 'new',        component: AddDocumentComponent },
   { path: '**',         component: NotFoundComponent }
 ];
 

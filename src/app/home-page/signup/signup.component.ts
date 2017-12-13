@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
   startSignupAjax() {
     this.userThing.postSignup(this.theUser)
       .then(() => {
-        this.routerThing.navigate(['/phones']);
+        this.routerThing.navigate(['/dashboard']);
       })
       .catch((err) => {
         console.log('Sign up error.');

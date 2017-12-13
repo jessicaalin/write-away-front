@@ -24,12 +24,12 @@ export class LoginComponent implements OnInit {
   startLoginAjax() {
     this.userThing.postLogin(this.theUser)
       .then(() => {
-        this.routerThing.navigate(['/phones']);
+        this.routerThing.navigate(['/dashboard']);
       })
       .catch((err) => {
         console.log('Log in error.');
         console.log(err);
-      })
+      });
   }
 
 }

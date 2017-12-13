@@ -1,6 +1,9 @@
 <div>
   <header>
     <p>WriteAway</p>
+    <p *ngIf="userThing.currentUser">
+    Hello, <b>{{ userThing.currentUser.username }}</b>.
+    </p>
   </header>
 
   <router-outlet></router-outlet>
