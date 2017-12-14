@@ -15,7 +15,7 @@ export class AddDocumentComponent implements OnInit {
   constructor(
     // private activatedThing: ActivatedRoute,
     private docThing: DocApiService,
-    // private routerThing: Router
+    private routerThing: Router
   ) { }
 
   ngOnInit() {
@@ -24,6 +24,7 @@ export class AddDocumentComponent implements OnInit {
   submitDoc() {
     this.docThing.addOneDoc(this.docInfo)
       .then(() => {
+        this.routerThing.navigate(['/dashboard']);
         console.log('Save successful.');
       })
       .catch((err) => {

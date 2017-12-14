@@ -1,5 +1,14 @@
 <p>Home Page Ish works!</p>
 
-<app-login></app-login>
+<a href="#signup" (click)="toggleSignup()">Sign Up</a>
+<a href="#login" (click)="toggleLogin()">Log In</a>
 
-<app-signup></app-signup>
+<div class="box-test"></div>
+
+<div id="signup" class="inactive" [ngClass] = "{'signup': signupConfig.isVisible}">
+  <app-signup></app-signup>
+</div>
+
+<div id="login" class="inactive" [ngClass] = "{'login': loginConfig.isVisible}">
+  <app-login></app-login>
+</div>

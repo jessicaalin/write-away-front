@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { DocApiService, Doc } from '../services/doc-api.service';
+import { UserApiService } from '../services/user-api.service';
 
 
 
@@ -14,9 +15,20 @@ export class DashboardComponent implements OnInit {
 
   docs: Doc[] = [];
 
-  constructor(private docThing: DocApiService) { }
+  constructor(
+    private docThing: DocApiService,
+    private userThing: UserApiService,
+    private routerThing: Router
+  ) { }
 
   ngOnInit() {
+
+    this.userThing.getCheckLogin()
+      .catch((err) => {
+        console.log("Check Login Error.");
+        console.log(err);
+      })
+
     this.docThing.getDocs()
       .then((docResults: Doc[]) => {
         console.log("Doc List API");
@@ -47,6 +59,16 @@ export class DashboardComponent implements OnInit {
     this.docs.splice(this.docs.indexOf(oneDoc), 1);
   }
 
+  startLogOutAjax() {
+    this.userThing.logout()
+    .then(() => {
+      this.routerThing.navigate(['/']);
+    })
+    .catch((err) => {
+      console.log("Log out error.");
+      console.log(err);
+    })
+  }
 
 
 }

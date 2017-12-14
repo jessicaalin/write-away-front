@@ -9,7 +9,7 @@ import { UserApiService } from './services/user-api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Write Away';
 
   constructor (
     private userThing: UserApiService,
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.userThing.getCheckLogin()
       .catch((err) => {
-        console.log("Check Login Error");
+        console.log("Check Login Error.");
         console.log(err);
       });
     }

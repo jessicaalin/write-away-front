@@ -39,6 +39,7 @@ export class DocEditTitleComponent implements OnInit {
   submitEdit() {
     this.docThing.editOneDocTitle(this.docInfo._id, this.docInfo)
     .then(() => {
+      this.routerThing.navigate(['/dashboard']);
       console.log('Save successful.');
     })
     .catch((err) => {

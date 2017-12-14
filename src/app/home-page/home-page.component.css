@@ -1,0 +1,12 @@
+.box-test{
+  height:1000px;
+}
+
+div.inactive {
+  display: none;
+}
+
+div.inactive.signup,
+div.inactive.login {
+  display: flex;
+}

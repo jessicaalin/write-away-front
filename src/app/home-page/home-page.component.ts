@@ -7,9 +7,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  signupConfig: any = {
+    isVisible: false
+  }
+
+  loginConfig: any = {
+    isVisible: false
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  toggleSignup() {
+    if (this.signupConfig.isVisible) {
+      this.signupConfig.isVisible = false;
+    }
+    else {
+      this.signupConfig.isVisible = true;
+    }
+  }
+
+  toggleLogin() {
+    if (this.loginConfig.isVisible) {
+      this.loginConfig.isVisible = false;
+    }
+    else {
+      this.loginConfig.isVisible = true;
+    }
+  }
+
+
 
 }
