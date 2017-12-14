@@ -43,6 +43,10 @@ export class DashboardComponent implements OnInit {
       })
   }
 
+  removeDoc(oneDoc) {
+    this.docs.splice(this.docs.indexOf(oneDoc), 1);
+  }
+
 
 
 }
