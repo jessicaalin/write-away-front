@@ -16,6 +16,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AddDocumentComponent } from './add-document/add-document.component';
 import { DocComponent } from './doc/doc.component';
 import { DocEditComponent } from './doc-edit/doc-edit.component';
+import { DocEditTitleComponent } from './doc-edit-title/doc-edit-title.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DocEditComponent } from './doc-edit/doc-edit.component';
     NotFoundComponent,
     AddDocumentComponent,
     DocComponent,
-    DocEditComponent
+    DocEditComponent,
+    DocEditTitleComponent
   ],
   imports: [
     BrowserModule,

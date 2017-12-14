@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { DocApiService, Doc } from '../services/doc-api.service';
 
 @Component({
   selector: 'app-add-document',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDocumentComponent implements OnInit {
 
-  constructor() { }
+  docInfo = new Doc()
+
+  constructor(
+    // private activatedThing: ActivatedRoute,
+    private docThing: DocApiService,
+    // private routerThing: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  submitDoc() {
+    this.docThing.addOneDoc(this.docInfo)
+      .then(() => {
+        console.log('Save successful.');
+      })
+      .catch((err) => {
+        console.log('Save error.');
+        console.log(err);
+      });
   }
 
 }

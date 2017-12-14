@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DocApiService, Doc } from '../services/doc-api.service';
 
 @Component({
-  selector: 'app-doc-edit',
-  templateUrl: './doc-edit.component.html',
-  styleUrls: ['./doc-edit.component.css']
+  selector: 'app-doc-edit-title',
+  templateUrl: './doc-edit-title.component.html',
+  styleUrls: ['./doc-edit-title.component.css']
 })
-export class DocEditComponent implements OnInit {
+export class DocEditTitleComponent implements OnInit {
 
   docInfo = new Doc()
 
@@ -37,7 +37,7 @@ export class DocEditComponent implements OnInit {
   }
 
   submitEdit() {
-    this.docThing.editOneDocText(this.docInfo._id, this.docInfo)
+    this.docThing.editOneDocTitle(this.docInfo._id, this.docInfo)
     .then(() => {
       console.log('Save successful.');
     })

@@ -33,10 +33,19 @@ export class DocApiService {
     ).toPromise();
   }
 
-  // PATCH /api/doc/:id
-  editOneDoc(oneId: string, docInfo: Doc) {
+  // PATCH /api/doc/edit/title/:id
+  editOneDocTitle(oneId: string, docInfo: Doc) {
     return this.httpThing.patch(
-      `${environment.backendURL}/api/doc/${oneId}`,
+      `${environment.backendURL}/api/doc/edit/title/${oneId}`,
+      docInfo,
+    {withCredentials: true}
+  ).toPromise();
+  }
+
+  // PATCH /api/doc/edit/text/:id
+  editOneDocText(oneId: string, docInfo: Doc) {
+    return this.httpThing.patch(
+      `${environment.backendURL}/api/doc/edit/text/${oneId}`,
       docInfo,
     {withCredentials: true}
   ).toPromise();
@@ -50,7 +59,14 @@ export class DocApiService {
     ).toPromise();
   }
 
-
+  // PATCH /api/doc/new
+  addOneDoc(docInfo: Doc) {
+    return this.httpThing.patch(
+      `${environment.backendURL}/api/doc/new`,
+      docInfo,
+      {withCredentials: true}
+    ).toPromise();
+  }
 
 
 }

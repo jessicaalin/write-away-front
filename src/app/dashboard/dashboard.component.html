@@ -1,9 +1,9 @@
-
+<a [routerLink] = "['/doc/new']" >Add</a>
 <ul>
   <li *ngFor="let oneDoc of docs">
     <h3>{{oneDoc.title}}</h3>
-    <a [routerLink] = "['/doc', oneDoc._id]">See Details</a>
+    <a [routerLink] = "['/doc/edit/text', oneDoc._id]">See Details</a>
+    <a [routerLink] = "['/doc/edit/title', oneDoc._id]">Edit Name</a>
     <button (click)="startDeleteAjax(oneDoc._id)">Delete</button>
   </li>
 </ul>
-<!-- <a [routerLink] = "[/doc/new]">Add</a> -->
