@@ -1,14 +1,9 @@
 
 <form (ngSubmit)="submitEdit()">
-  <input type="text" value="{{docInfo.text}}" [(ngModel)]="docInfo.text" name="textInput">
+  <input id="textInput" type="text" value="{{docInfo.text}}" [(ngModel)]="docInfo.text" name="textInput">
   <button>Save</button>
 </form>
 
 <a [routerLink] = "['/dashboard']">Dashboard</a>
 
 <button>Test</button>
-
-<!-- <h3>Test</h3>
-<button (click)="decrement()">-</button>
-{{value}}
-<button (click)="increment()">+</button> -->
