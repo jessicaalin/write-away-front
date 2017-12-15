@@ -6,5 +6,10 @@
 
 <a [routerLink] = "['/dashboard']">Dashboard</a>
 
-<button (click)="timerSwitchOn()">Focus On</button>
-<button (click)="timerSwitchOff()">Focus Off</button>
+<div class="focusOn" [ngClass] = "{'focusOn': onConfig.isVisible}">
+  <button (click)="timerSwitchOn(); toggleOn()">Focus On</button>
+</div>
+
+<div class="focusOff" [ngClass] = "{'focusOff': offConfig.isVisible}">
+  <button (click)="timerSwitchOff(); toggleOff()">Focus Off</button>
+</div>

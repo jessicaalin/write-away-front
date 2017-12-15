@@ -1,0 +1,9 @@
+div.focusOn,
+div.focusOff {
+  display: flex;
+}
+
+div.focusOn.focusOn,
+div.focusOff.focusOff {
+  display: none;
+}

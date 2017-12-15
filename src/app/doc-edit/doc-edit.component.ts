@@ -15,6 +15,13 @@ var timer = false;
 
 export class DocEditComponent implements OnInit {
 
+  onConfig: any = {
+    isVisible: false
+  }
+  offConfig: any = {
+    isVisible: true
+  }
+
   docInfo = new Doc()
 
   constructor(
@@ -97,6 +104,27 @@ export class DocEditComponent implements OnInit {
     if (timer === true) {
       timer = false;
       clearInterval(this.changeInterval);
+    }
+  }
+
+  toggleOn() {
+    if (this.onConfig.isVisible) {
+      this.onConfig.isVisible = false;
+    }
+    // need to fix here
+    else {
+      this.onConfig.isVisible = true;
+      this.offConfig.isVisible = false;
+    }
+  }
+
+  toggleOff() {
+    if (this.offConfig.isVisible) {
+      this.offConfig.isVisible = false;
+    }
+    else {
+      this.offConfig.isVisible = true;
+      this.onConfig.isVisible = false;
     }
   }
 
