@@ -3,16 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { DocApiService, Doc } from '../services/doc-api.service';
 
-export enum key_code {
-  a = 65
-}
-
 var docText = null;
 var focusText = null;
-
-// OR WHY DOESN'T THIS WORK???
-// var inputValue = (<HTMLInputElement>document.getElementById('textInput')).value;
-// console.log(inputValue);
+var timer = false;
 
 @Component({
   selector: 'app-doc-edit',
@@ -65,42 +58,46 @@ export class DocEditComponent implements OnInit {
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     console.log(event);
+    if (timer === true) {
+      // timer will start the timer at any key event
+      this.focusMode();
 
-    // if (event.keyCode === key_code.a) {
-      this.timer();
-    // }
+    }
+
   }
 
   changeInterval = null;
-  timer() {
+  focusMode() {
     console.log("typing...");
     clearInterval(this.changeInterval)
     this.changeInterval = setInterval(() => {
       console.log("stopped typing.");
       console.log(docText.text); // Works!
+      // reassigning focusText with text from input
       focusText = docText.text;
-      // remove(focusText);
       console.log(focusText);
-      // console.log(this.docThing.text); can't read of undefined
-      // console.log(this.docInfo.text); // can't read text of undefined
-      // console.log(this.docInfo); // undefined
-      // console.log(docText.text.innerHtml);  // undefined
-
+      // slicing text
       focusText = focusText.slice(0, -1);
       console.log(focusText);
-      // WILL THIS WORK???
+      // updating input value with sliced text;
+      // so it actually shows erasing letter by letter
       this.docInfo.text = focusText;
-
-    }, 5000);
+    }, 1000);
   }
 
-}
-
-// broken function - stops halfway through string
-function remove(string){
-  for(let i=0; i < string.length ; i++)
-  {
-  string = string.slice(0,-1);
-  console.log(string);
+  // starts focus mode
+  timerSwitchOn() {
+    if (timer === false) {
+    timer = true;
+    }
   }
+
+  // stops focus mode by clearing interval
+  timerSwitchOff() {
+    if (timer === true) {
+      timer = false;
+      clearInterval(this.changeInterval);
+    }
+  }
+
 }
