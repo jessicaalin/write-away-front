@@ -2,14 +2,14 @@
 
 <form (ngSubmit)="startSignupAjax()">
 
-  <label for="username-input">Username</label>
-  <input id="username-input" type="text" placeholder="e.g. theMeowingWriter" [(ngModel)]="theUser.username" name="usernameInput">
+  <label for="signup-username-input">Username</label>
+  <input id="signup-username-input" type="text" placeholder="e.g. theMeowingWriter" [(ngModel)]="theUser.username" name="usernameInput">
   <br>
   <label for="email-input">Email</label>
   <input id="email-input" type="text" placeholder="e.g. meow@meow.meow" [(ngModel)]="theUser.email" name="emailInput">
   <br>
-  <label for="password-input">Password</label>
-  <input id="password-input" type="text" placeholder="Meowfish" [(ngModel)]="theUser.password" name="passwordInput">
+  <label for="signup-password-input">Password</label>
+  <input id="signup-password-input" type="text" placeholder="Meowfish" [(ngModel)]="theUser.password" name="passwordInput">
 
   <button>Sign In</button>
 

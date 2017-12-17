@@ -13,7 +13,7 @@ import { SignupComponent } from './home-page/signup/signup.component';
 import { LoginComponent } from './home-page/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AddDocumentComponent } from './add-document/add-document.component';
+import { AddDocumentComponent } from './dashboard/add-document/add-document.component';
 import { DocComponent } from './doc/doc.component';
 import { DocEditComponent } from './doc-edit/doc-edit.component';
 import { DocEditTitleComponent } from './doc-edit-title/doc-edit-title.component';

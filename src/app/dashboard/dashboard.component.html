@@ -6,7 +6,6 @@
     <button *ngIf="userThing.currentUser" (click)="startLogOutAjax()">Log Out</button>
   </header>
 
-  <a [routerLink] = "['/doc/new']" >Add</a>
   <ul>
     <li *ngFor="let oneDoc of docs; let i = index">
       <h3>{{oneDoc.title}}</h3>
@@ -17,3 +16,15 @@
   </ul>
 
 </div>
+
+<!-- <app-add-document></app-add-document> -->
+
+
+
+<hr>
+
+
+<form (ngSubmit)="submitDoc()">
+  <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput">
+  <button (click)="addDoc()">Save</button>
+</form>

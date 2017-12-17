@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
 
 import { DocApiService, Doc } from '../services/doc-api.service';
 import { UserApiService } from '../services/user-api.service';
@@ -13,7 +15,8 @@ import { UserApiService } from '../services/user-api.service';
 })
 export class DashboardComponent implements OnInit {
 
-  docs: Doc[] = [];
+  docInfo = new Doc();
+  docs: any = [];
 
   constructor(
     private docThing: DocApiService,
@@ -59,6 +62,8 @@ export class DashboardComponent implements OnInit {
     this.docs.splice(this.docs.indexOf(oneDoc), 1);
   }
 
+
+
   startLogOutAjax() {
     this.userThing.logout()
     .then(() => {
@@ -70,5 +75,21 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  submitDoc() {
+    this.docThing.addOneDoc(this.docInfo)
+      .then(() => {
+        // this.routerThing.navigate(['/dashboard']);
+        console.log('Save successful.');
+      })
+      .catch((err) => {
+        console.log('Save error.');
+        console.log(err);
+      });
+  }
+
+  addDoc() {
+    this.docs.unshift(this.docInfo);
+
+  }
 
 }

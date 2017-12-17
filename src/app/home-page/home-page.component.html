@@ -1,14 +1,34 @@
-<p>Home Page Ish works!</p>
+<div class="wrapper">
 
-<a href="#signup" (click)="toggleSignup()">Sign Up</a>
-<a href="#login" (click)="toggleLogin()">Log In</a>
+  <div class="name">
+    <h1>Write Away</h1>
+  </div>
 
-<div class="box-test"></div>
+  <div class="video-container video-filter">
+    <video autoplay loop>
+        <source src="https://coverr.co/s3/mp4/Workaholic.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+    </video>
+  </div>
 
-<div id="signup" class="inactive" [ngClass] = "{'signup': signupConfig.isVisible}">
-  <app-signup></app-signup>
-</div>
+  <div class="links">
+    <div class="button">
+      <a href="#signup" (click)="toggleSignup()">Sign Up</a>
+    </div>
+    <div class="button">
+      <a href="#login" (click)="toggleLogin()">Log In</a>
+    </div>
+  </div>
 
-<div id="login" class="inactive" [ngClass] = "{'login': loginConfig.isVisible}">
-  <app-login></app-login>
+  <div class="user-container">
+
+    <div id="signup" class="inactive" [ngClass] = "{'signup': signupConfig.isVisible}">
+      <app-signup></app-signup>
+    </div>
+
+    <div id="login" class="inactive" [ngClass] = "{'login': loginConfig.isVisible}">
+      <app-login></app-login>
+    </div>
+
+  </div>
+
 </div>

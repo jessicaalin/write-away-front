@@ -1,0 +1,5 @@
+
+<form (ngSubmit)="submitDoc(); addDoc(); resetForm()">
+  <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput">
+  <button click="clear()">Save</button>
+</form>

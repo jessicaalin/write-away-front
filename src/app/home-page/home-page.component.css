@@ -1,12 +1,81 @@
-.box-test{
-  height:1000px;
+/**/
+/*  making the video fullscreen  */
+.video-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
 }
 
+.video-filter {
+  filter: grayscale(100%);
+}
+
+/* signup and login hidden */
 div.inactive {
   display: none;
 }
 
+/* signup and login appear upon click */
 div.inactive.signup,
 div.inactive.login {
   display: flex;
+}
+
+h1 {
+  font-family: 'Raleway', serif;
+  color: rgb(214,228,240);
+  font-size: 80px;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #163172;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+}
+
+.name {
+  align-self: flex-start;
+  /*margin-top: -50px;*/
+  margin-left: 20px;
+  padding-bottom: 500px;
+
+}
+
+.links {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+  margin-left: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(214,228,240);
+  font-family: 'Poppins';
+  font-size: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  /*outline: 0;*/
+  background: #163172;
+  width: 100px;
+  border-radius: 3%;
+  padding: 10px 15px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-right: 25px;
+}
+
+.button:hover, .button:active, .button:focus {
+  background: #1E56A0;
 }
