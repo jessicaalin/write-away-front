@@ -1,9 +1,15 @@
-.container {
-  font-family: "Poppins", sans-serif;
+* {
 }
 
-.form {
+.container {
+  font-family: "Poppins", sans-serif;
+  background-color: #f2f2f2;
+  width: 100%;
+}
 
+header {
+  padding: 20px 50px;
+  font-family: 'Raleway', serif;
 }
 
 .button {
@@ -41,6 +47,78 @@ ul {
   align-items: center;
 }
 
+.add-doc,
+li.doc-card {
+  background-image: url("../../assets/book.png");
+  width: 200px;
+  height: 275px;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  color: #163172;
+}
+
+li.doc-card .doc-buttons {
+  display: flex;
+  align-content: space-between;
+}
+
+.doc-buttons {
+  padding-left: 10px;
+  align-self: flex-end;
+}
+
 li a {
   text-decoration: none;
+}
+
+li button {
+  border: 0;
+  background-color: inherit;
+  outline: none;
+}
+
+span {
+  color: #163172;
+}
+
+span:hover, span:active, span:focus {
+  color: #1E56A0;
+}
+
+li.doc-card h3 {
+  text-align: center;
+  width: 50%;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+/*salutations, req.user*/
+p {
+  padding: 50px;
+  font-size: 20px;
+}
+
+
+.add-doc input {
+  background: #f2f2f2;
+  width: 70%;
+  /*height: 750px;*/
+  border: 0;
+  /*margin: 0 0 15px;*/
+  /*padding-top: 50px;*/
+  box-sizing: border-box;
+  font-size: 16px;
+  /*resize: none;*/
+  outline: none;
+  /*text-align: center;*/
+  width: 60%;
+  margin-left: 55px;
+  margin-top: 23px;
+  font-size: 24px;
+}
+
+.doc-container {
+  display: flex;
+  flex: 1 1 0;
 }

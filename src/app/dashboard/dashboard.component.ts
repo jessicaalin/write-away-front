@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private docThing: DocApiService,
-    private userThing: UserApiService,
+    public userThing: UserApiService,
     private routerThing: Router
   ) { }
 

@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins|Raleway:700');
 
-@font-face {
-    font-family: Tofino-Thin;
-    src: url("assets/TofinoPersonal-Thin.otf") format("opentype");
-}
-
-@font-face {
-    font-family: Tofino-Thin-Italic;
-    src: url("assets/TofinoPersonal-ThinItalic.otf") format("opentype");
-}
-
-@font-face {
-  font-family: Lehigh;
-  src: url("assets/Lehigh-Personal_OTFs/Lehigh-Personal-Black.otf") format("opentype");
-}
-
 * {
   margin: 0 auto;
 }

@@ -1,26 +1,30 @@
 <div class="container">
   <header>
-    <p *ngIf="userThing.currentUser">
-    Salutations, <b>{{ userThing.currentUser.username }}</b>.
-    </p>
-    <button class="button" *ngIf="userThing.currentUser" (click)="startLogOutAjax()">Log Out</button>
+
+      <h1>Write Away</h1>
+      <button class="button" *ngIf="userThing.currentUser" (click)="startLogOutAjax()">Log Out</button>
+
   </header>
 
-  <ul>
+  <p *ngIf="userThing.currentUser">
+    Salutations, <b>{{ userThing.currentUser.username }}</b>.
+  </p>
+
+  <ul class="doc-container">
     <li>
-      <form (ngSubmit)="submitDoc()">
-        <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput">
-        <button (click)="addDoc()">Save</button>
+      <form class="add-doc" (ngSubmit)="submitDoc()">
+        <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput" placeholder="Add New" />
+        <button (click)="addDoc()"><span class="glyphicon glyphicon-plus" aria-hidden="true" title="Add New"></span></button>
       </form>
     </li>
-    <li *ngFor="let oneDoc of docs; let i = index">
+    <li class="doc-card" *ngFor="let oneDoc of docs; let i = index">
       <h3>{{oneDoc.title}}</h3>
-      <a [routerLink] = "['/doc/edit/text', oneDoc._id]">Edit</a>
-      <!-- <a [routerLink] = "['/doc/edit/title', oneDoc._id]">Edit Title</a> -->
-      <button (click)="startDeleteAjax(oneDoc._id); removeDoc(oneDoc)">Delete</button>
+      <div class="doc-buttons">
+        <a [routerLink] = "['/doc/edit/text', oneDoc._id]"><span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Edit"></span></a>
+        <button (click)="startDeleteAjax(oneDoc._id); removeDoc(oneDoc)"><span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete"></span></button>
+      </div>
+
     </li>
   </ul>
 
 </div>
-
-<!-- <app-add-document></app-add-document> -->

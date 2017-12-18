@@ -40,6 +40,7 @@ h1 {
 .wrapper {
   display: flex;
   flex-flow: column;
+  align-content: space-between;
 }
 
 .name {
@@ -54,6 +55,7 @@ h1 {
   flex-flow: row;
   align-items: flex-end;
   margin-left: 20px;
+  margin-top: 80px;
 }
 
 a {
@@ -68,7 +70,7 @@ a {
   justify-content: center;
   text-transform: uppercase;
   background: #163172;
-  width: 100px;
+  width: 110px;
   border-radius: 3%;
   padding: 10px 15px;
   -webkit-transition: all 0.3 ease;
@@ -85,6 +87,6 @@ a {
 .login {
   display: flex;
   justify-content: center;
-  margin-top: -500px;
+  margin-top: -400px;
   margin-bottom: -25px;
 }
