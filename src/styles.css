@@ -14,3 +14,7 @@
   font-family: Lehigh;
   src: url("assets/Lehigh-Personal_OTFs/Lehigh-Personal-Black.otf") format("opentype");
 }
+
+* {
+  margin: 0 auto;
+}

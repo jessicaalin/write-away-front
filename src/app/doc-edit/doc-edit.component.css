@@ -1,9 +1,102 @@
-div.focusOn,
-div.focusOff {
+.container {
+  font-family: "Poppins", sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-flow: column;
+  padding: 0;
+  width: 100%;
+}
+
+.focusOn,
+.focusOff {
   display: flex;
 }
 
-div.focusOn.focusOn,
-div.focusOff.focusOff {
+.focusOn.focusOn,
+.focusOff.focusOff {
   display: none;
+}
+
+.edit-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-text textarea {
+  background: #f2f2f2;
+  width: 70%;
+  height: 750px;
+  border: 0;
+  margin: 0 0 15px;
+  padding-top: 50px;
+  box-sizing: border-box;
+  font-size: 16px;
+  resize: none;
+}
+
+.edit-text textarea:focus {
+  outline: none;
+}
+
+.edit-title {
+  /*justify-content: flex-start;*/
+  /*margin-left: 10px;*/
+}
+
+.edit-title input {
+  /*background: #f2f2f2;*/
+  background: #D6E4F0;
+  border: 0;
+  /*margin: 0 0 15px;*/
+  /*padding: 15px;*/
+  /*box-sizing: border-box;*/
+  font-size: 14px;
+  font-family: "Poppins";
+  outline: none;
+  color: #163172;
+}
+
+.edit-title input:focus, .edit-title input:active, .edit-title input:hover {
+  color: #1E56A0;
+}
+
+.toolbar-container {
+  width: 100%;
+  background-color: #D6E4F0;
+  padding: 20px;
+}
+
+.toolbar {
+  display: flex;
+  flex-flow: row;
+  /*justify-content: flex-start;*/
+  /*margin: auto;*/
+  background-color: #D6E4F0;
+}
+
+.toolbar-buttons{
+
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.button {
+
+}
+
+button {
+  border: 0;
+  background-color: inherit;
+}
+
+span {
+  color: #163172;
+}
+
+span:hover, span:active, span:focus {
+  color: #1E56A0;
 }

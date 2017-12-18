@@ -1,13 +1,17 @@
-<h2>Log In</h2>
+<div class="container">
 
-<form (ngSubmit)="startLoginAjax()">
+  <form class="form" (ngSubmit)="startLoginAjax()">
 
-  <label for="login-username-input">Username</label>
-  <input id="login-username-input" type="text" placeholder="meow" [(ngModel)]="theUser.username" name="usernameInput">
-  <br>
-  <label for="login-password-input">Password</label>
-  <input id="login-password-input" type="password" placeholder="e.g. meowfish" [(ngModel)]="theUser.password" name="passwordInput">
+    <!-- <label for="login-username-input">Username</label> -->
+    <!-- <br> -->
+    <input id="login-username-input" type="text" placeholder="username" [(ngModel)]="theUser.username" name="usernameInput">
+    <br>
+    <!-- <label for="login-password-input">Password</label> -->
+    <br>
+    <input id="login-password-input" type="password" placeholder="password" [(ngModel)]="theUser.password" name="passwordInput">
+    <br>
+    <button class="button">Log In</button>
 
-  <button>Log In</button>
+  </form>
 
-</form>
+</div>

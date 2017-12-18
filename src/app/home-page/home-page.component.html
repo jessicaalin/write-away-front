@@ -10,6 +10,18 @@
     </video>
   </div>
 
+  <div class="user-container">
+
+    <div id="signup" class="inactive signup" [ngClass] = "{'signup': signupConfig.isVisible}">
+      <app-signup></app-signup>
+    </div>
+
+    <div id="login" class="inactive login" [ngClass] = "{'login': loginConfig.isVisible}">
+      <app-login></app-login>
+    </div>
+
+  </div>
+
   <div class="links">
     <div class="button">
       <a href="#signup" (click)="toggleSignup()">Sign Up</a>
@@ -19,16 +31,6 @@
     </div>
   </div>
 
-  <div class="user-container">
 
-    <div id="signup" class="inactive" [ngClass] = "{'signup': signupConfig.isVisible}">
-      <app-signup></app-signup>
-    </div>
-
-    <div id="login" class="inactive" [ngClass] = "{'login': loginConfig.isVisible}">
-      <app-login></app-login>
-    </div>
-
-  </div>
 
 </div>

@@ -1,16 +1,22 @@
-<div>
+<div class="container">
   <header>
     <p *ngIf="userThing.currentUser">
-    Hello, <b>{{ userThing.currentUser.username }}</b>.
+    Salutations, <b>{{ userThing.currentUser.username }}</b>.
     </p>
-    <button *ngIf="userThing.currentUser" (click)="startLogOutAjax()">Log Out</button>
+    <button class="button" *ngIf="userThing.currentUser" (click)="startLogOutAjax()">Log Out</button>
   </header>
 
   <ul>
+    <li>
+      <form (ngSubmit)="submitDoc()">
+        <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput">
+        <button (click)="addDoc()">Save</button>
+      </form>
+    </li>
     <li *ngFor="let oneDoc of docs; let i = index">
       <h3>{{oneDoc.title}}</h3>
-      <a [routerLink] = "['/doc/edit/text', oneDoc._id]">See Details</a>
-      <a [routerLink] = "['/doc/edit/title', oneDoc._id]">Edit Name</a>
+      <a [routerLink] = "['/doc/edit/text', oneDoc._id]">Edit</a>
+      <!-- <a [routerLink] = "['/doc/edit/title', oneDoc._id]">Edit Title</a> -->
       <button (click)="startDeleteAjax(oneDoc._id); removeDoc(oneDoc)">Delete</button>
     </li>
   </ul>
@@ -18,13 +24,3 @@
 </div>
 
 <!-- <app-add-document></app-add-document> -->
-
-
-
-<hr>
-
-
-<form (ngSubmit)="submitDoc()">
-  <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput">
-  <button (click)="addDoc()">Save</button>
-</form>

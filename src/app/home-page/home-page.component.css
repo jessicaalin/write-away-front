@@ -1,4 +1,6 @@
-/**/
+
+
+
 /*  making the video fullscreen  */
 .video-container {
   position: fixed;
@@ -9,6 +11,7 @@
   width: auto;
   height: auto;
   z-index: -100;
+  background-color: black;
 }
 
 .video-filter {
@@ -41,7 +44,6 @@ h1 {
 
 .name {
   align-self: flex-start;
-  /*margin-top: -50px;*/
   margin-left: 20px;
   padding-bottom: 500px;
 
@@ -65,7 +67,6 @@ a {
   display: flex;
   justify-content: center;
   text-transform: uppercase;
-  /*outline: 0;*/
   background: #163172;
   width: 100px;
   border-radius: 3%;
@@ -78,4 +79,12 @@ a {
 
 .button:hover, .button:active, .button:focus {
   background: #1E56A0;
+}
+
+.signup,
+.login {
+  display: flex;
+  justify-content: center;
+  margin-top: -500px;
+  margin-bottom: -25px;
 }

@@ -1,0 +1,46 @@
+.container {
+  font-family: "Poppins", sans-serif;
+}
+
+.form {
+
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  background: #163172;
+  width: 130px;
+  border-radius: 3%;
+  padding: 10px 15px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top: 20px;
+  color: rgb(214,228,240);
+  font-family: 'Poppins';
+  font-size: 20px;
+}
+
+.button:hover, .button:active, .button:focus {
+  background: #1E56A0;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+li a {
+  text-decoration: none;
+}
