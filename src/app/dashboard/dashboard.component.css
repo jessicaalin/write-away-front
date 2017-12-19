@@ -1,10 +1,10 @@
-* {
-}
-
 .container {
   font-family: "Poppins", sans-serif;
   background-color: #f2f2f2;
   width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column;
 }
 
 header {
@@ -38,6 +38,11 @@ header {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
+  width: inherit;
+}
+
+.doc-container {
+  width: inherit;
 }
 
 ul {
@@ -63,9 +68,21 @@ li.doc-card .doc-buttons {
   align-content: space-between;
 }
 
+.add-doc {
+  align-content: space-between;
+}
+
+/*.add-button {
+  display: flex;
+  height: inherit;
+  align-items: flex-end;
+  padding: 0 0 0 10px;
+}*/
+
 .doc-buttons {
-  padding-left: 10px;
-  align-self: flex-end;
+  height: inherit;
+  padding: 0 0 70px 10px;
+  align-items: flex-end;
 }
 
 li a {
@@ -120,5 +137,28 @@ p {
 
 .doc-container {
   display: flex;
-  flex: 1 1 0;
+  /*justify-content: center;*/
+}
+
+form {
+  display: flex;
+  /*justify-content: center;*/
+}
+.add-button {
+  width: 50%;
+  margin-left: 30%;
+  display: flex;
+  /*justify-content: center;*/
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 auto;
+  padding: 20px;
+  /*align-items: flex-end;*/
+}
+
+footer p {
+  font-size: 14px;
 }

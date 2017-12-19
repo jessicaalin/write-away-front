@@ -78,18 +78,18 @@ export class DashboardComponent implements OnInit {
   submitDoc() {
     this.docThing.addOneDoc(this.docInfo)
       .then(() => {
-        // this.routerThing.navigate(['/dashboard']);
         console.log('Save successful.');
+        this.docInfo = new Doc();
       })
       .catch((err) => {
         console.log('Save error.');
         console.log(err);
       });
+
   }
 
   addDoc() {
     this.docs.unshift(this.docInfo);
-
   }
 
 }

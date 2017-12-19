@@ -62,7 +62,7 @@ export class DocApiService {
   // PATCH /api/doc/new
   addOneDoc(docInfo: Doc) {
     return this.httpThing.patch(
-      `${environment.backendURL}/api/doc/new`,
+      `${environment.backendURL}/api/doc/new/`,
       docInfo,
       {withCredentials: true}
     ).toPromise();

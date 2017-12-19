@@ -41,7 +41,7 @@
 
 .toolbar-container {
   width: 100%;
-  background-color: #D6E4F0;
+  background-color: #D6E4F0 !important;
   padding: 20px;
   display: flex;
   flex-flow: row;
@@ -58,6 +58,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  background-color: #D6E4F0;
 }
 
 .toolbar input {
@@ -92,12 +93,13 @@ a {
 
 button {
   border: 0;
-  background-color: inherit;
   outline: none;
+  background-color: #D6E4F0;
 }
 
 span {
   color: #163172;
+  background-color: #D6E4F0;
 }
 
 span:hover, span:active, span:focus {

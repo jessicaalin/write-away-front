@@ -1,4 +1,5 @@
 <div class="container">
+
   <header>
 
       <h1>Write Away</h1>
@@ -12,9 +13,9 @@
 
   <ul class="doc-container">
     <li>
-      <form class="add-doc" (ngSubmit)="submitDoc()">
-        <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput" placeholder="Add New" />
-        <button (click)="addDoc()"><span class="glyphicon glyphicon-plus" aria-hidden="true" title="Add New"></span></button>
+      <form name="addDoc" class="add-doc" (ngSubmit)="submitDoc()">
+        <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput" placeholder="Add New" autocomplete="off" />
+        <button class="add-button" (click)="addDoc()"><span class="glyphicon glyphicon-plus" aria-hidden="true" title="Add New"></span></button>
       </form>
     </li>
     <li class="doc-card" *ngFor="let oneDoc of docs; let i = index">
@@ -26,5 +27,11 @@
 
     </li>
   </ul>
+
+  <footer>
+    <p>
+      Made with ♥︎ by <a href="http://github.com/jessicaalin">Jess</a>
+    </p>
+  </footer>
 
 </div>
