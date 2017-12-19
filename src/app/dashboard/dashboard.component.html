@@ -1,5 +1,7 @@
 <div class="container">
 
+  <div class="another-container">
+
   <header>
 
       <h1>Write Away</h1>
@@ -14,8 +16,8 @@
   <ul class="doc-container">
     <li>
       <form name="addDoc" class="add-doc" (ngSubmit)="submitDoc()">
-        <input type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput" placeholder="Add New" autocomplete="off" />
-        <button class="add-button" (click)="addDoc()"><span class="glyphicon glyphicon-plus" aria-hidden="true" title="Add New"></span></button>
+        <textarea type="text" value="{{docInfo.title}}" [(ngModel)]="docInfo.title" name="titleInput" placeholder="Add New" autocomplete="off"></textarea>
+        <button class="add-button"><span class="glyphicon glyphicon-plus" aria-hidden="true" title="Add New"></span></button>
       </form>
     </li>
     <li class="doc-card" *ngFor="let oneDoc of docs; let i = index">
@@ -24,9 +26,14 @@
         <a [routerLink] = "['/doc/edit/text', oneDoc._id]"><span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Edit"></span></a>
         <button (click)="startDeleteAjax(oneDoc._id); removeDoc(oneDoc)"><span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete"></span></button>
       </div>
-
     </li>
+    <!-- <li class="doc-card">
+      <h3>{{oneDoc.title}}</h3>
+      <a class="doc-buttons" [routerLink] = "['/doc/edit/text', oneDoc._id]"><span class="glyphicon glyphicon-heart" aria-hidden="true" title="Edit"></span></a>
+    </li> -->
   </ul>
+
+  </div>
 
   <footer>
     <p>

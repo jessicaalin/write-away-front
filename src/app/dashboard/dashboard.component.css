@@ -2,7 +2,8 @@
   font-family: "Poppins", sans-serif;
   background-color: #f2f2f2;
   width: 100%;
-  height: auto;
+  height: 100%;
+  /*margin: 0;*/
   display: flex;
   flex-flow: column;
 }
@@ -43,6 +44,8 @@ header {
 
 .doc-container {
   width: inherit;
+  display: flex;
+  justify-content: center;
 }
 
 ul {
@@ -66,11 +69,15 @@ li.doc-card {
 li.doc-card .doc-buttons {
   display: flex;
   align-content: space-between;
+  justify-content: center;
 }
 
 .add-doc {
   align-content: space-between;
 }
+ li {
+   margin: 25px 50px;
+ }
 
 /*.add-button {
   display: flex;
@@ -105,9 +112,10 @@ span:hover, span:active, span:focus {
 
 li.doc-card h3 {
   text-align: center;
-  width: 50%;
-  padding-left: 10px;
-  padding-top: 10px;
+  width: 60%;
+  padding: 5px 0 5px 15px;
+  height: 1500px;
+  overflow: scroll;
 }
 
 /*salutations, req.user*/
@@ -117,22 +125,20 @@ p {
 }
 
 
-.add-doc input {
+.add-doc textarea {
   background: #f2f2f2;
-  width: 70%;
-  /*height: 750px;*/
   border: 0;
-  /*margin: 0 0 15px;*/
-  /*padding-top: 50px;*/
   box-sizing: border-box;
   font-size: 16px;
-  /*resize: none;*/
   outline: none;
-  /*text-align: center;*/
+  text-align: center;
   width: 60%;
-  margin-left: 55px;
+  height: 58%;
+  margin-left: 50px;
   margin-top: 23px;
   font-size: 24px;
+  outline: none;
+  resize: none;
 }
 
 .doc-container {
@@ -154,11 +160,16 @@ form {
 footer {
   display: flex;
   justify-content: center;
-  flex: 1 0 auto;
+  /*flex: 1 0 auto;*/
   padding: 20px;
-  /*align-items: flex-end;*/
+  background-color: #f2f2f2;
 }
 
 footer p {
   font-size: 14px;
+}
+
+.another-container {
+  width: 100%;
+  flex: 1 0 auto;
 }

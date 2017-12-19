@@ -42,6 +42,7 @@ export class DashboardComponent implements OnInit {
         console.log("Doc List API Error.");
         console.log(err);
       });
+
   }
 
   startDeleteAjax(id: string) {
@@ -62,8 +63,6 @@ export class DashboardComponent implements OnInit {
     this.docs.splice(this.docs.indexOf(oneDoc), 1);
   }
 
-
-
   startLogOutAjax() {
     this.userThing.logout()
     .then(() => {
@@ -77,8 +76,9 @@ export class DashboardComponent implements OnInit {
 
   submitDoc() {
     this.docThing.addOneDoc(this.docInfo)
-      .then(() => {
+      .then((docFromApi) => {
         console.log('Save successful.');
+        this.docs.unshift(docFromApi);
         this.docInfo = new Doc();
       })
       .catch((err) => {
@@ -86,10 +86,6 @@ export class DashboardComponent implements OnInit {
         console.log(err);
       });
 
-  }
-
-  addDoc() {
-    this.docs.unshift(this.docInfo);
   }
 
 }
