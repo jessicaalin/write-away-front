@@ -23,14 +23,13 @@
     <li class="doc-card" *ngFor="let oneDoc of docs; let i = index">
       <h3>{{oneDoc.title}}</h3>
       <div class="doc-buttons">
-        <a [routerLink] = "['/doc/edit/text', oneDoc._id]"><span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Edit"></span></a>
-        <button (click)="startDeleteAjax(oneDoc._id); removeDoc(oneDoc)"><span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete"></span></button>
-      </div>
+
+          <a *ngIf="userThing.currentUser._id === oneDoc.author" [routerLink] = "['/doc/edit/text', oneDoc._id]"><span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Edit"></span></a>
+          <button *ngIf="userThing.currentUser._id === oneDoc.author" (click)="startDeleteAjax(oneDoc._id); removeDoc(oneDoc)"><span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete"></span></button>
+          <a *ngIf="userThing.currentUser._id !== oneDoc.author" [routerLink] = "['/doc/edit/text', oneDoc._id]"><span class="glyphicon glyphicon-heart" aria-hidden="true" title="Read"></span></a>
+        </div>
+      <!-- </div> -->
     </li>
-    <!-- <li class="doc-card">
-      <h3>{{oneDoc.title}}</h3>
-      <a class="doc-buttons" [routerLink] = "['/doc/edit/text', oneDoc._id]"><span class="glyphicon glyphicon-heart" aria-hidden="true" title="Edit"></span></a>
-    </li> -->
   </ul>
 
   </div>

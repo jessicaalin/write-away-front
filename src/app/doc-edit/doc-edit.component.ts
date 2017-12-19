@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { DocApiService, Doc } from '../services/doc-api.service';
+import { UserApiService } from '../services/user-api.service';
 
 var docText = null;
 var focusText = null;
@@ -22,21 +23,29 @@ export class DocEditComponent implements OnInit {
     isVisible: true
   }
 
-  docInfo = new Doc()
+  docInfo = new Doc();
+  docs: any = [];
 
   constructor(
     private activatedThing: ActivatedRoute,
     private docThing: DocApiService,
+    public userThing: UserApiService,
     private routerThing: Router,
   ) { }
 
   ngOnInit() {
+
+    this.userThing.getCheckLogin()
+      .catch((err) => {
+        console.log("Check Login Error.");
+        console.log(err);
+      })
+
     this.activatedThing.params.subscribe((myReqParams) => {
       console.log(myReqParams.id);
       this.startAjaxCall(myReqParams.id);
     })
   }
-
 
   startAjaxCall(id) {
     this.docThing.getOneDoc(id)
