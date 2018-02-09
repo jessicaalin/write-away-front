@@ -1,6 +1,5 @@
 # FinalProject
 
-<<<<<<< HEAD
 This project was my final project at Ironhack after learning how to code for about eight weeks.
 
 Hello! 
