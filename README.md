@@ -1,7 +1,5 @@
 # FinalProject
 
-This project was my final project at Ironhack after learning how to code for about eight weeks.
-
 Hello! 
 
 I made this as my final project after just eight weeks of learning to code at Ironhack. It is a word-processing app that highlights a clean interface with a focus mode feature that erases text after idle activity.
